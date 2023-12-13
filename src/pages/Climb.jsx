@@ -42,7 +42,7 @@ const Climb = () => {
               }`}
               onClick={() => setLink({ mountOne: true, mountTwo: false })}
             >
-              <a>mountain 1</a>
+              <a href="#">mountain 1</a>
             </li>
             <li
               className={`font-bold text-[20px] pt-1 pl-2 pr-2 opacity-70 uppercase cursor-pointer hover:bg-white hover:opacity-70 hover:text-[#414F6B] ${
@@ -52,7 +52,7 @@ const Climb = () => {
               }`}
               onClick={() => setLink({ mountOne: false, mountTwo: true })}
             >
-              <a>mountain 2</a>
+              <a href="#">mountain 2</a>
             </li>
           </ul>
         </div>
