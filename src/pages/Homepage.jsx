@@ -15,7 +15,7 @@ const Homepage = () => {
         }}
         className="min-h-[100vh]"
       >
-        <NavigationBar />
+        <NavigationBar makeWhite={true} />
         <img
           src={text}
           alt=""

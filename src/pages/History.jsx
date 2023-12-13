@@ -53,7 +53,7 @@ const History = () => {
   }, [currentPage]);
 
   return (
-    <div>
+    <div className="container-content">
       <NavigationBar showMount={true} />
       <div
         style={{
@@ -80,7 +80,7 @@ const History = () => {
             tristique ut quam. Vivamus suscipit dignissim tortor nec congue
           </p>
         </div>
-        <div className="opacity-50 bg-black lg:ml-[150px] lg:mr-[150px] sm:ml-11 sm:mr-11 md:mr-16 md:ml-16">
+        <div className="opacity-50 bg-black lg:pl-[150px] lg:pr-[150px] sm:pl-11 sm:pr-11 md:pr-16 md:pl-16 w-full">
           <div className="p-5 flex justify-center items-center flex-col sm:h-[240px] mt-40 md:mt-44 ">
             <div className="flex mb-2 z-50 sm:p-2">
               {myImages.map((image, index) => (

@@ -1,12 +1,19 @@
 import React from "react";
 import logo from "../assets/Logo.png";
 import AccordionComponent from "./AccordionComponent";
+import { useNavigate } from "react-router-dom";
 
-const NavigationBar = ({ showMount }) => {
+const NavigationBar = ({ showMount, makeWhite }) => {
+  const navigate = useNavigate();
   return (
     <nav className="p-4 flex justify-between lg:ml-[150px] lg:mr-[150px] sm:ml-11 sm:mr-11 md:mr-16 md:ml-16">
       <div className="flex sm:-ml-4">
-        <img src={logo} alt="" className="w-[40px] h-[40px] cursor-pointer" />
+        <img
+          src={logo}
+          alt=""
+          className="w-[40px] h-[40px] cursor-pointer"
+          onClick={() => navigate("/")}
+        />
         <span className={`sm:-mt-1 ml-2 mt-1 ${showMount ? "" : "hidden"}`}>
           <p className="uppercase text-[#4D4D4D] font-semibold md:font-bold text-sm sm:text-lg">
             los angeles
@@ -23,7 +30,7 @@ const NavigationBar = ({ showMount }) => {
           <ul className="flex flex-col">
             <li className="mb-2 hover:border-b hover:border-b-[#414F6B] p-[2px]">
               <a
-                href="/"
+                href="/history"
                 className="uppercase text-sm font-semibold text-[#414F6B]"
               >
                 01. history
@@ -31,7 +38,7 @@ const NavigationBar = ({ showMount }) => {
             </li>
             <li className="hover:border-b hover:border-b-[#414F6B] p-[2px]">
               <a
-                href="/"
+                href="/team"
                 className="uppercase text-sm font-semibold text-[#414F6B]"
               >
                 02. team
@@ -43,10 +50,24 @@ const NavigationBar = ({ showMount }) => {
 
       {/* larger devices */}
       <ul className="sm:flex hidden">
-        <li className="text-[#414F6B] mr-10 hover:text-black uppercase font-bold text-lg cursor-pointer underline">
+        <li
+          className={`${
+            makeWhite
+              ? "text-white decoration-white"
+              : "text-[#414F6B] decoration-[#414F6B]"
+          } mr-10 hover:text-black uppercase font-bold text-lg cursor-pointer underline hover:decoration-black`}
+          onClick={() => navigate("/history")}
+        >
           <p>01. history</p>
         </li>
-        <li className="text-[#414F6B] uppercase hover:text-black font-bold text-lg cursor-pointer underline">
+        <li
+          className={`${
+            makeWhite
+              ? "text-white decoration-white"
+              : "text-[#414F6B] decoration-[#414F6B]"
+          } uppercase hover:text-black font-bold text-lg cursor-pointer underline hover:decoration-black`}
+          onClick={() => navigate("/team")}
+        >
           <p>02. team</p>
         </li>
       </ul>
